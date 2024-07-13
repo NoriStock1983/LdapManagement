@@ -1,0 +1,22 @@
+button{
+    width:100%;
+
+}
+
+.primary{
+    background-color: lightgreen;
+    border-radius: 10px;  
+    border-color: lightgreen;
+}
+
+.danger{
+    background-color: red;
+    border-color: red;
+
+}
+
+.success{
+    background-color: lightblue;
+    border-radius: 10px;
+    border-color: lightblue;
+}
