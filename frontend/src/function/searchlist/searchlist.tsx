@@ -9,7 +9,7 @@ import Tables from '../../shared/table/table';
 
 
 function SearchList(){
-    const [search,setsearch] = useState<SearchCondition>({usercd:"",companycd:"",deptcd:""})
+    const [search,setsearch] = useState<SearchCondition>({usercd:"",usernm:"",email:"",companycd:"",companynm_short:"",deptcd:"",deptnm_short:"",positioncd:"",positionnm_short:"",nyushadate:new Date(),insertdate:new Date()});
     return(
         <div>        
             <div className="col-20">
@@ -26,7 +26,7 @@ function SearchList(){
                 <hr className="offset-1"></hr>
                 <h2 className="offset-1">検索結果</h2>
                 <div className="rows">
-                    <Tables label={""} classname='col-23 offset-1' tableheader={[]} tabledetail={[]} />  
+                    <Tables label={""} classname='col-23 offset-1' tableheader={['ユーザCD','ユーザ名','会社名','部課名','役職名','入社日','登録日']} tabledetail={[]} />  
 
                 </div>
             </div>

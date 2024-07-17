@@ -1,12 +1,13 @@
 import { forwardRef } from "react";
 import "../shared.css";
 import "./table.css";
+import { UserDetail } from "../../interfaces/userdetail.interface";
 
 interface tableprops {
     label: string;
     classname?: string;
     tableheader: string[];
-    tabledetail: string[][];
+    tabledetail: UserDetail[];
   }
 const Tables = forwardRef<HTMLButtonElement,tableprops>(function Tables(
     props,
@@ -17,13 +18,9 @@ const Tables = forwardRef<HTMLButtonElement,tableprops>(function Tables(
             <table>
                 <tr>
                     <th>#</th>
-                    <th>社員番号</th>
-                    <th>社員名</th>
-                    <th>会社コード</th>
-                    <th>部署コード</th>
-                    <th>役職</th>
-                    <th>入社日</th>
-                    <th>退職日</th>
+                    {props.tableheader.map((item,index)=>
+                        <th key={index}>{item}</th>
+                    )}
                 </tr>
                 <tr>
                     <td>1</td>
