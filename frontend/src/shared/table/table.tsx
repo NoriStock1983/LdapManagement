@@ -15,6 +15,7 @@ const Tables = forwardRef<HTMLButtonElement,tableprops>(function Tables(
     ) {
     return (
         <div className={props.classname}>
+            <h2>{props.label}</h2>
             <table>
                 <tr>
                     <th>#</th>
