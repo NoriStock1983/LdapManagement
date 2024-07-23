@@ -1,7 +1,5 @@
+export default function validattion() {
 
-function validateEmail(email: string): boolean {
-  // Email validation logic
-  return true;
+    alert("TEST");
+
 }
-
-export { validateEmail };

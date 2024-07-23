@@ -3,6 +3,9 @@ import './index.css';
 import TextInput from './shared/input/input';
 import PrimaryButton from './shared/button/button';
 import SelectInput from './shared/select/select';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Home } from './home/home';
+import { SearchList } from './function/searchlist/searchlist';
 
 function App() {
 
@@ -15,20 +18,12 @@ function App() {
     {code:'0005',name:'外装課'},
   ];
   return (
-    <div className="col-24">
-        <div className="rows">
-            <TextInput label="Input" type="search" value={search.usercd} classname="col-4 offset-1" isrequired={true}  onchange={(e) => {setsearch({...search,usercd:e.target.value})}} />
-            <TextInput label="Date From" type="date" classname="col-4 offset-1"  isrequired={false} onchange={(e) => {setsearch({...search,username:e.target.value})}} />
-        </div>
-        <br></br>
-        <div className="rows">
-            <TextInput label="Input" type="search" value={search.usercd} classname="col-4 offset-1" isrequired={true}  onchange={(e) => {setsearch({...search,usercd:e.target.value})}} />
-            <TextInput label="Date From" type="date" classname="col-4 offset-1"  isrequired={false} onchange={(e) => {setsearch({...search,username:e.target.value})}} />
-            <SelectInput label="Select" list={list} classname="col-4 offset-1" isrequired={true} value={search.deptcd} onchange={(e) => {setsearch({...search,deptcd:e.target.value})}}/>
-              <PrimaryButton label="Search" classname='success col-2 offset-6' onclick={() => {}} />
-        </div>
-        <div>{search.deptcd}</div>
-      </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home  />} />
+        <Route path="/search" element={<SearchList />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
