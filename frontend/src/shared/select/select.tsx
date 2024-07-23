@@ -1,19 +1,36 @@
+// <SelectInput>
+// 共通で利用できるセレクトボックスを作成する。
+// 引数
+// label: string
+//　list: props[]
+//　classname?: string
+//　isrequired: boolean
+//　value?: string
+//　onchange: (event: React.ChangeEvent<HTMLSelectElement>) => void
+
+
+
+
 import { forwardRef } from "react";
 import "../shared.css";
+import "./select.css";
 
+interface props{
+  code:string;
+  name:string;
+}
 
 //画面表示
 interface selectprops {
     label: string;
-    type:string;
+    list : props[];
     classname?: string;
     isrequired: boolean;
     value?: string;
-    message?:string;
     onchange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   }
 
-  const TextInput = forwardRef<HTMLSelectElement, selectprops>(function TextInput(
+  const SelectInput = forwardRef<HTMLSelectElement, selectprops>(function SelectInput(
     props,
     ref
   ) {
@@ -24,18 +41,14 @@ interface selectprops {
         </div>
         <div>
             <select ref={ref} value={props.value} onChange={props.onchange}>
-                <option value="">{props.label}</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
+              {props.list.map((item,index)=>
+                <option key={index} value={item.code}>{item.name}</option>
+              )}
             </select>
-        </div>
-        <div>
-            {props.isrequired && !props.value ? props.message:''}
-            {props.message ? props.message:''}
         </div>
         
       </div>
     );
   });
 
-export default TextInput;
+export default SelectInput;
