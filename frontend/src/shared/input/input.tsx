@@ -1,37 +1,23 @@
-import { forwardRef } from "react";
-import "../shared.css";
-import "./input.css";
+import React from "react";
 
-//画面表示
-interface inputprops {
-    label: string;
-    type:string;
-    classname?: string;
-    isrequired: boolean;
-    value?: string;
-    message?:string;
-    onchange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  }
+import { useFormContext } from "../form/formContext";
 
-  const TextInput = forwardRef<HTMLInputElement, inputprops>(function TextInput(
-    props,
-    ref
-  ) {
+type Props = JSX.IntrinsicElements["input"];
+
+export const Input = React.forwardRef<HTMLInputElement, Props>(
+  (props, forwardedRef) => {
+    const { id, errorTextId, isError } = useFormContext();
     return (
-      <div className={props.classname}>
-        <div>
-            <label>{props.label}</label>
-        </div>
-        <div>
-            <input type={props.type} ref={ref} value={props.value} onChange={props.onchange} />
-        </div>
-        <div>
-            {props.isrequired && !props.value ? props.message:''}
-            {props.message ? props.message:''}
-        </div>
-        
-      </div>
+      <input
+        type="search"
+        id={id}
+        aria-describedby={[errorTextId || ""].join(" ")}
+        aria-invalid={isError}
+        ref={forwardedRef}
+        {...props}
+      />
     );
-  });
+  }
+);
 
-export default TextInput;
+Input.displayName = "Input";

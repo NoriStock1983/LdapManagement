@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './index.css';
-import TextInput from './shared/input/input';
 import PrimaryButton from './shared/button/button';
 import SelectInput from './shared/select/select';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
