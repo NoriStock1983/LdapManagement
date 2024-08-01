@@ -1,0 +1,9 @@
+span {
+    color: red;
+  }
+  [aria-invalid='true'] {
+    border: 2px solid red;
+    border-radius: 5px;
+    height: 30px;
+  }
+  

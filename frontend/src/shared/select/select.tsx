@@ -35,19 +35,11 @@ interface selectprops {
     ref
   ) {
     return (
-      <div className={props.classname}>
-        <div>
-            <label>{props.label}</label>
-        </div>
-        <div>
             <select ref={ref} value={props.value} onChange={props.onchange}>
               {props.list.map((item,index)=>
                 <option key={index} value={item.code}>{item.name}</option>
               )}
             </select>
-        </div>
-        
-      </div>
     );
   });
 

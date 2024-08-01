@@ -3,9 +3,12 @@ button{
 }
 
 .primary{
-    background-color: lightgreen;
-    border-radius: 10px;  
-    border-color: lightgreen;
+    background-color: #D2E5FE;
+    border-radius: 10px;
+}
+
+.primary:active{
+    background-color: #D2E5FE;
 }
 
 .danger{
