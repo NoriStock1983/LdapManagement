@@ -22,6 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "playwright test",
+    "playtest": "playwright test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

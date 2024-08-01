@@ -1,11 +1,12 @@
 import { useId } from "react";
 import { FormContext } from "./formContext";
-
+import React from "react";
+import './form.css';
 
 export type FormProps = {
     labelText: string;
     className?: string;
-    error?:boolean | string;
+    error?: boolean | string;
     children: React.ReactNode;
 }
 

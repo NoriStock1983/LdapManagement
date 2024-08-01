@@ -1,10 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
+import './input.css';
 
 import { useFormContext } from "../form/formContext";
 
 type Props = JSX.IntrinsicElements["input"];
 
-export const Input = React.forwardRef<HTMLInputElement, Props>(
+export const Input = forwardRef<HTMLInputElement, Props>(
   (props, forwardedRef) => {
     const { id, errorTextId, isError } = useFormContext();
     return (
@@ -12,8 +13,7 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
         type="search"
         id={id}
         aria-describedby={[errorTextId || ""].join(" ")}
-        aria-invalid={isError}
-        ref={forwardedRef}
+        aria-invalid={isError as boolean}
         {...props}
       />
     );

@@ -4,7 +4,7 @@ export type FormContextValue ={
     id: string | undefined;
     labelId: string | undefined;
     errorTextId: string | undefined;
-    isError: boolean;
+    isError: boolean | string;
 
 };
 
