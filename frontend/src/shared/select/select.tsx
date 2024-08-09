@@ -30,17 +30,13 @@ interface selectprops {
     onchange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   }
 
-  const SelectInput = forwardRef<HTMLSelectElement, selectprops>(function SelectInput(
-    props,
-    ref
-  ) {
+  function SelectInput(props: selectprops) {
     return (
-            <select ref={ref} value={props.value} onChange={props.onchange}>
+            <select value={props.value} onChange={props.onchange}>
               {props.list.map((item,index)=>
                 <option key={index} value={item.code}>{item.name}</option>
               )}
             </select>
     );
-  });
-
+  }
 export default SelectInput;
