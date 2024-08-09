@@ -7,7 +7,7 @@ interface tableprops {
     label: string;
     classname?: string;
     tableheader: string[];
-    tabledetail: UserDetail[];
+    tabledetail: string[];
   }
 const Tables = forwardRef<HTMLButtonElement,tableprops>(function Tables(
     props,

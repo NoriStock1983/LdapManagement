@@ -6,16 +6,12 @@ interface avatorProps {
     image?:string
     alt:string
 }
-const Avator = forwardRef<HTMLImageElement,avatorProps>(function Avator(
-    props,
-    ref
-    ) {
-    return (
-        <div>
-            {props.image?<img src={props.image} ref={ref} alt={props.alt} className='avatar'/>:<img ref={ref} alt={props.alt} className='avatar'/>}
-        </div>
-        
-    );
-    });
 
+
+
+    function Avator(props: avatorProps) {
+        return (
+            <img src={props.image} alt={props.alt} />
+        );
+      }
     export default Avator;

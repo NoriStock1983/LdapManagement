@@ -7,16 +7,13 @@ interface buttonprops {
     classname?: string;
     onclick: () => void;
   }
-const PrimaryButton = forwardRef<HTMLButtonElement,buttonprops>(function PrimaryButton(
-    props,
-    ref
-    ) {
+  
+function PrimaryButton(props: buttonprops) {
     return (
-            <button ref={ref} className={props.classname} onClick={props.onclick}>
+            <button className={props.classname} onClick={props.onclick}>
             {props.label}
             </button>
 
     );
-    });
-
+  }
     export default PrimaryButton;
